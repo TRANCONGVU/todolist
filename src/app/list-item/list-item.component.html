@@ -1,0 +1,16 @@
+<div class="d-flex todoitem" *ngFor="let item of listItem; index as idx">
+    <button (click)="checkTodoList(item.id)">
+    <i class="fa fa-check" aria-hidden="true"></i>check
+  </button>
+    <p>{{item.createdAt}}</p>
+    <ng-container *ngIf="item.status == false; else elseTemplate">
+        <p>{{ item.title }}</p>
+    </ng-container>
+    <ng-template #elseTemplate>
+        <p class="done">{{ item.title }}</p>
+    </ng-template>
+
+    <button (click)="removeTodoItem(item.id)">
+    <i class="fa fa-trash" aria-hidden="true "></i>x
+  </button>
+</div>

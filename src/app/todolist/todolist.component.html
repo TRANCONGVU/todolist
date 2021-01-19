@@ -1,0 +1,13 @@
+<h1>224243</h1>
+<div class="col-md-5 offset-4 todolist mt-5">
+    <div class="text-center todoitem header">
+        <h2>
+            {{title}}
+        </h2>
+    </div>
+    <app-list-item [listItem]="todo"></app-list-item>
+    <!-- <input type="text " [(ngModel)]="title "> -->
+    <!-- <button (click)="addTodoList() " class="btn btn-primary ">submit</button> -->
+    <app-input (itemTodo)="addTodoListInput($event)"></app-input>
+    <mat-dialog-content class="mat-typography"></mat-dialog-content>
+</div>
